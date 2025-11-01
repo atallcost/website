@@ -25,3 +25,10 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
+
+ document.getElementById('contactForm').addEventListener('submit', function (e) {
+    if (!this.checkValidity()) {
+      e.preventDefault();           // bloque l’envoi
+      this.reportValidity();        // affiche le message natif
+    }
+  });
