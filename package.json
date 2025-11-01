@@ -1,0 +1,28 @@
+(() => {
+    let ticking = false;
+    const factor = 0.25; // intensité (ajuste)
+    const update = () => {
+        const scroll = window.scrollY || window.pageYOffset || 0;
+        // shift = -factor * scroll
+        document.documentElement.style.setProperty('--bg-shift', `${Math.round(-scroll * factor)}px`);
+        ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+        }
+    }, { passive: true });
+    update();
+})();
+
+/* valeur par défaut */
+:root { --bg-shift: 0px; }
+
+/* appliquer au calque d'arrière-plan */
+.bg-layer {
+  transform: translateY(var(--bg-shift));
+  /* ou pour accélération GPU : */
+  /* transform: translate3d(0, var(--bg-shift), 0); */
+  will-change: transform;
+}
