@@ -44,37 +44,6 @@
       </div>
     </header>
 
-    <!-- Réseaux sociaux 
-    <section class="reveal" id="reseau">
-      <div class="container">
-        <nav aria-label="Réseaux sociaux">
-          <ul>
-            <li>
-              <a class="navlink" href="https://www.instagram.com/atallcost.ai?igsh=cWw2MTZoMms2Nmtu">
-                <img src="logo/instagram.png" alt="Instagram" class="insta"> Instagram
-              </a>
-            </li>
-            <li>
-              <a class="navlink" href="https://linktr.ee/atallcostai">
-                <img src="logo/telegram-logo.png" alt="Telegram" class="Telegram"> Telegram
-              </a>
-            </li>
-            <li>
-              <a class="navlink" href="https://discord.gg/eu2X2DqUyR">
-                <img src="logo/discord-logo.png" alt="Discord" class="discord"> Discord
-              </a>
-            </li>
-            <li>
-              <a class="navlink" href="https://www.linkedin.com/in/at-all-cost-cy-tech-ai-lab-45755a294">
-                <img src="logo/linkedin.png" alt="LinkedIn" class="linkedin"> LinkedIn
-              </a>
-            </li>
-            
-          </ul>
-        </nav>
-      </div>
-    </section>-->
-
     <!-- Contact -->
     <section id="contact">
       <div class="container">
@@ -82,6 +51,13 @@
         <p>Pour toute information, n'hésitez pas à nous contacter :</p>
 
         <form action="https://formsubmit.co/atallcostai@gmail.com" method="POST" class="contact-form">
+          
+          <input type="hidden" name="_next" value="https://atallcost.github.io/website/contact.html?success=true">          
+          <input type="hidden" name="_subject" value="[Contact AAC] Nouveau message depuis le site">
+          
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+
           <label for="nom">Nom <span style="color:red">*</span></label>
           <input type="text" id="nom" name="nom" placeholder="Nom" required>
 
@@ -90,21 +66,17 @@
 
           <label for="email">Adresse e-mail <span style="color:red">*</span></label>
           <input
-  type="email"
-  id="email"
-  name="email"
-  required
-  placeholder="exemple@mail.com"
-  pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
-  title="Entrez une adresse e-mail valide (ex. nom@domaine.com)"
->
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="exemple@mail.com"
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+            title="Entrez une adresse e-mail valide"
+          >
 
           <label for="message">Message <span style="color:red">*</span></label>
           <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
-
-          <input type="hidden" name="_subject" value="[Contact AAC] Nouveau message depuis le site">
-          <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="_captcha" value="false">
 
           <button type="submit">Envoyer</button>
         </form>

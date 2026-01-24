@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+     /* =========================================
+       MESSAGE DE SUCCÈS (Formulaire Contact)
+       ========================================= */
+    // On regarde si l'URL contient "?success=true"
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (urlParams.get('success') === 'true') {
+        const contactSection = document.getElementById('contact');
+        
+        // On remplace le formulaire par un message de remerciement
+        if (contactSection) {
+            const container = contactSection.querySelector('.container');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <h2 style="color: #facc15; font-size: 2.5rem;">🚀 Message envoyé !</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px;">Merci de nous avoir contactés.<br>L'équipe At All Cost vous répondra très vite.</p>
+                    <a href="index.html" class="nav-link" style="display:inline-block;">Retour à l'accueil</a>
+                </div>
+            `;
+            // On fait défiler la page jusqu'au message pour être sûr qu'il le voie
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     /* ============================================================
         GESTION DYNAMIQUE DES ÉVÉNEMENTS
        ============================================================ */
