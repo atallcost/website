@@ -341,3 +341,15 @@ form button:hover { background-color: var(--color-primary-strong); transform: tr
 .card--media { padding: 0; overflow: hidden; }
 .card--media img { width: 100%; height: 180px; object-fit: cover; display: block; }
 .card--media .caption { padding: 12px 14px; color: var(--color-text); }
+
+
+/* --- CORRECTION CENTRAGE NOMS ÉQUIPE --- */
+.member-card ul {
+    margin: 10px 0 0 0; /* Enlève le décalage à gauche */
+    padding: 0;
+    list-style: none;   /* Enlève les puces s'il y en a */
+}
+
+.member-card li {
+    margin-top: 4px;    /* Petit espace entre chaque nom */
+}
