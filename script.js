@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 url: "" 
             },
             {
-                title: "Meetup IA @ Kedge", 
+                title: "Meetup IA Kedge", 
                 desc: "Conférence au Kedge Business School sur l'IA et les métiers créatifs.",
                 date: "2025-12-11",
                 displayDate: "11 Décembre 2025",
