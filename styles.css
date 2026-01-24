@@ -274,11 +274,12 @@ footer {
   margin-top: 6px;
 }
 
-/* Events */
+/* === EVENTS === */
 #evenements {
   background-color: transparent;
   color: var(--color-text);
 }
+
 .events {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -286,19 +287,22 @@ footer {
   margin-top: 16px;
   color: var(--color-text);
 }
+
+/* Carte Événement : Structure principale */
 .event {
   background: rgba(250, 204, 21, 0.06);
   border: 1px solid rgba(250, 204, 21, 0.2);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  padding: 18px;
+  padding: 20px;
   border-radius: 12px;
   color: var(--color-text);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  
+  /* Flexbox pour l'alignement vertical */
   display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* pousse la date en bas */
-  min-height: 210px; /* adapte selon ta hauteur moyenne */
+  flex-direction: column; 
+  height: 100%; /* Force la carte à prendre toute la hauteur de la ligne */
 }
 
 .event:hover {
@@ -306,20 +310,79 @@ footer {
   box-shadow: 0 8px 24px rgba(250, 204, 21, 0.12);
   border-color: rgba(250, 204, 21, 0.36);
 }
+
 .event h3 {
   color: #ffffff;
   margin-top: 0;
 }
 
+/* Le paragraphe prend tout l'espace disponible pour pousser le footer vers le bas */
+.event p {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+/* Footer de la carte (Date + Bouton) */
+.event-actions {
+  margin-top: auto; /* C'est ça qui colle le bloc tout en bas */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Aligne verticalement le bouton et la date */
+  border-top: 1px solid rgba(250, 204, 21, 0.15);
+  padding-top: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Conteneur Date + Badge */
 .event-date {
-  margin-top: 12px;
-  text-align: right;
   font-size: 0.85rem;
   color: #ffcb25;
-  opacity: 0.85;
-  border-top: 1px solid rgba(250, 204, 21, 0.15);
-  padding-top: 6px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espace entre la date et le badge */
 }
+
+/* Badge "Bientôt" */
+.badge {
+  background-color: #ffcb25; /* Rouge pour bien ressortir */
+  color: white;
+  padding: 2px 8px;
+  border-radius: 99px; /* Forme de pilule */
+  font-size: 0.75em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Bouton "En savoir +" */
+.btn-link {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-link:hover {
+  background-color: var(--color-primary);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Style pour les archives (grisé) */
+.past-events .event.past {
+    opacity: 0.6;
+    filter: grayscale(100%);
+    border-color: #333;
+}
+
 
 /* Team */
 #equipe {
