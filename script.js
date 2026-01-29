@@ -98,8 +98,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Calcul du badge "Bientôt" (si l'événement est dans 7 jours ou moins)
-            const isSoon = (eventDate >= today && (eventDate - today) / (1000 * 60 * 60 * 24) <= 7);
-            const badgeHtml = isSoon ? '<span class="badge">Bientôt !</span>' : '';
+           /* const isSoon = (eventDate >= today && (eventDate - today) / (1000 * 60 * 60 * 24) <= 7);
+            const badgeHtml = isSoon ? '<span class="badge">Bientôt !</span>' : '';*/
+
+            // --- LOGIQUE CORRIGÉE ---
+            const diffInTime = eventDate.getTime() - today.getTime();
+            // On utilise Math.round pour éviter le décalage d'un jour
+            const diffInDays = Math.round(diffInTime / (1000 * 60 * 60 * 24));
+            
+            let badgeHtml = '';
+            
+            if (diffInDays === 0) {
+                badgeHtml = '<span class="badge" style="background: #ef4444; color: white;">Aujourd\'hui !</span>';
+            } else if (diffInDays === 1) {
+                badgeHtml = '<span class="badge" style="background: #f59e0b; color: white;">Demain</span>';
+            } else if (diffInDays > 1 && diffInDays <= 7) {
+                badgeHtml = `<span class="badge">J-${diffInDays}</span>`;
+            }
+            // ---------------------------------
 
             // Icône différente selon passé ou futur
             const icon = eventDate >= today ? '📅' : '🏁';
