@@ -33,13 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- LISTE DES ÉVÉNEMENTS  ---
         const allEvents = [
-           {
-                title: "Les réseaux de neurones en IA", 
-                desc: "Conférence interactive animée par Mourad Hassani, doctorant spécialisé en NLP et Santé. Public motivé et engagé requis !",
-                date: "2026-03-06",
-                displayDate: "06 Mars 2026 | 18h30 - 20h30",
-                url: "" // Remplace par le lien ! 
-            },
             {
                 title: "Learning Technologies", 
                 desc: "Le salon de référence dédié au Digital Learning et l'impact de l'IA sur l'éducation.",
